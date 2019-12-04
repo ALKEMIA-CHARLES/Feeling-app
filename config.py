@@ -5,15 +5,11 @@ class Config:
     General configuration parent class
     '''
     
-    SQLALCHEMY_DATABASE_URI = ""
-    UPLOADED_PHOTOS_DEST = "app/static/photos"
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://emmanuel:lilfranken@localhost/feelings'
+    # UPLOADED_PHOTOS_DEST = "app/static/photos"
+    SECRET_KEY="verysecret"
 
-    # email configurations
-    MAIL_SERVER = "smtp.gmail.com"
-    MAIL_PORT = 587
-    MAIL_USE_TLS = True
-    MAIL_USERNAME = ""
-    MAIL_PASSWORD = ""
+    
 
 class ProdConfig(Config):
     '''
@@ -31,7 +27,7 @@ class TestConfig(Config):
     Args:
         Config: The parent configuration class with General configuration settings
     """
-    SQLALCHEMY_DATABASE_URI = "postgresql+psycopg2://collins:11946@localhost/watchlist_test"
+    # SQLALCHEMY_DATABASE_URI = "postgresql+psycopg2://collins:11946@localhost/watchlist_test"
 
 class DevConfig(Config):
     '''
@@ -40,8 +36,8 @@ class DevConfig(Config):
     Args:
         Config: The parent configuration class with General configuration settings
     '''
-    SQLALCHEMY_DATABASE_URI = "postgresql+psycopg2://collins:11946@localhost/watchlist"
-    DEBUG = True
+    # SQLALCHEMY_DATABASE_URI = "postgresql+psycopg2://collins:11946@localhost/watchlist"
+    DEBUG=True
 
 config_options = {
     "development": DevConfig,
