@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="container">
+    <h1>Your Affirmations</h1>
+    {%for added_affirmation in added_affirmations%}
+    <div class="card mb-4">
+        <div class="card-body">
+            <h1>{{added_affirmation.user_affirmations_title}}</h1>
+            <p>{{added_affirmation.user_affirmations_post_section}}</p>
+            <br>
+            <a class="btn btn-primary" href="/delaffirmation/{{added_affirmation.id}}">Delete</a>
+            <br>
+            <a href="/comments/{{added_affirmation.id }}">view comments/comment on Blog</a>
+
+        </div>
+    </div>
+    {%endfor%}
+</div>
+{% endblock %}

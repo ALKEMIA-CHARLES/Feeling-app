@@ -1,7 +1,7 @@
 from app import create_app, db
 from flask_script import Manager, Server
 from flask_migrate import Migrate, MigrateCommand
-from app.models import User
+from app.models import User,DatabaseAffirmations,UserAffirmations,Comments
 # import your models here too
 
 app = create_app("development")
@@ -22,7 +22,7 @@ manager.add_command("db",MigrateCommand)
 
 @manager.shell
 def make_shell_context():
-  return dict(app=app,db=db,User=User) #your models here 
+  return dict(app=app,db=db,User=User,DatabaseAffirmations=DatabaseAffirmations,UserAffirmations=UserAffirmations,Comments=Comments) #your models here 
 
 if __name__ == '__main__':
     manager.run()
