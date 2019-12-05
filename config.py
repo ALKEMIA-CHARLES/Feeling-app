@@ -6,7 +6,7 @@ class Config:
     General configuration parent class
     '''
     
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://emmanuel:lilfranken@localhost/feelings'
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://charles:123@localhost/feeling'
     # UPLOADED_PHOTOS_DEST = "app/static/photos"
     SECRET_KEY="verysecret"
 
@@ -40,7 +40,7 @@ class DevConfig(Config):
     Args:
         Config: The parent configuration class with General configuration settings
     '''
-    # SQLALCHEMY_DATABASE_URI = "postgresql+psycopg2://collins:11946@localhost/watchlist"
+
     DEBUG=True
 
 
