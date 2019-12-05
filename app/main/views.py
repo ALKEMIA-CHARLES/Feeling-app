@@ -6,13 +6,17 @@ from flask_login import login_required, current_user
 from .. import db
 
 
+@main.route("/home")
+def home():
+    return render_template("home.html")
+
+
 @main.route("/addaffirmation", methods=["GET", "POST"])
 def add():
     title = affirmation = None
     form = AddAffirmation()
-    print('1')
     if form.validate_on_submit():
-        print('2')
+
         affirmation = form.added_affirmation.data
         title = form.title.data
         new_affirmation = UserAffirmations(
@@ -70,6 +74,22 @@ def deletecomment(added_affirmation_id, comments_id):
 
 @main.route("/database_affirmations")
 def admin_affirmations():
-
     admin_affirmations = DatabaseAffirmations.query.all()
-    return render_template("databaseaffirmations.html", admin_affirmations=admin_affirmations)
+    print(admin_affirmations)
+    form = AffirmationComment()
+
+    return render_template("databaseaffirmations.html", admin_affirmations=admin_affirmations, form=form)
+
+
+@main.route('/submitcomment/<int:affirmation_id>', methods=['POST'])
+def submit_comments(affirmation_id):
+    form = AffirmationComment()
+
+    if form.validate_on_submit():
+        comment_data = form.comment.data
+        new_comment = Comments(comments_section=comment_data,
+                               database_affirmations_id=affirmation_id)
+        db.session.add(new_comment)
+        db.session.commit()
+
+    return redirect(url_for('main.admin_affirmations'))

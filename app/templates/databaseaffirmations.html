@@ -10,6 +10,17 @@
                 <p>{{admin_affirmation.database_affirmations_post_section}}</p>
             </div>
         </div>
+        <form method="POST" action="/submitcomment/{{ admin_affirmation.id }}">
+            {{form.hidden_tag()}}
+            {{form.comment.label}}
+            <div style="flex: auto;">
+                {{form.comment()}}
+                {{form.submit()}}
+            </div>
+        </form>
+        {% for comment in admin_affirmation.user_comments %}
+        <p>{{ comment.comments_section }}</p>
+        {% endfor %}
         {%endfor%}
     </div>
 </div>

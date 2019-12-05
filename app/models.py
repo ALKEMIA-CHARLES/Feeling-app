@@ -41,7 +41,6 @@ class UserAffirmations(db.Model):
     user_affirmations_title = db.Column(db.String)
     user_affirmations_post_section = db.Column(db.Text)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
-    
 
 
 class Comments(db.Model):
@@ -51,7 +50,5 @@ class Comments(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     database_affirmations_id = db.Column(
         db.Integer, db.ForeignKey('affirmations.id'))
-    
-
 
 

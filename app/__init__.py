@@ -2,14 +2,19 @@ from flask import Flask
 from config import config_options
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import LoginManager
+from flask_bootstrap import Bootstrap
 
 db = SQLAlchemy()
 login_manager = LoginManager()
-login_manager.session_protection = "strong" #security level, monitor the changes in a user's request header and log the user out
-login_manager.login_view = "auth.login" #We prefix the login endpoint with the blueprint name because it is located inside a blueprint.
+# security level, monitor the changes in a user's request header and log the user out
+login_manager.session_protection = "strong"
+# We prefix the login endpoint with the blueprint name because it is located inside a blueprint.
+login_manager.login_view = "auth.login"
+bootstrap = Bootstrap()
+
 
 def create_app(config_name):
-    
+
     app = Flask(__name__)
 
     # Creating the app configurations
@@ -18,6 +23,7 @@ def create_app(config_name):
     # Initializing flask extensions
     db.init_app(app)
     login_manager.init_app(app)
+    bootstrap.init_app(app)
 
     # Registering the main app Blueprint
     from .main import main as main_blueprint
@@ -25,6 +31,6 @@ def create_app(config_name):
 
     # Registering auth blueprint
     from .auth import auth as auth_blueprint
-    app.register_blueprint(auth_blueprint, url_prefix = "/authenticate")
+    app.register_blueprint(auth_blueprint, url_prefix="/authenticate")
 
     return app

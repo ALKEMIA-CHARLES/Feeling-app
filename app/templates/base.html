@@ -24,13 +24,16 @@
 <body>
     <nav class="navbar">
         <div class="navbar nav">
-            <a class="nav-item nav-link" href="{{url_for('main.add')}}">add affirmation</a>
+            <a class="nav-item nav-link" href="{{url_for('main.home')}}">Home</a>
             <a class="nav-item nav-link" href="{{url_for('main.admin_affirmations')}}">Get Positive</a>
+            <a class="nav-item nav-link" href="{{url_for('main.add')}}">Add affirmation</a>
             <a class="nav-item nav-link" href="{{url_for('main.affirmations_list')}}">Personal Affirmations</a>
         </div>
+
     </nav>
 
     {%block content%}
+
     {%endblock%}
 
 </body>
