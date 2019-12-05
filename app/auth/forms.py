@@ -2,6 +2,7 @@ from flask_wtf import FlaskForm
 from wtforms import StringField,PasswordField,SubmitField,validators,BooleanField
 from wtforms.validators import EqualTo,DataRequired
 from wtforms import ValidationError
+from ..models import User
 
 class SignupForm(FlaskForm):
   username = StringField('User Name',[validators.DataRequired()])
@@ -10,7 +11,7 @@ class SignupForm(FlaskForm):
   confirm = PasswordField('Confir Password',[validators.DataRequired()])
   submit = SubmitField('Sign Up')
 
-  def check_email(self,dataf_ield):
+  def check_email(self,data_field):
     if User.query.filter_by(email = data_field.data).first():
       raise ValidationError('an account with this email exist')
 
