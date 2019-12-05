@@ -5,6 +5,10 @@ from .forms import AddAffirmation, DelAffirmation, AffirmationComment, DelAffirm
 from flask_login import login_required, current_user
 from .. import db
 
+@main.route('/')
+def index():
+  return render_template('index.html')
+
 
 @main.route("/addaffirmation", methods=["GET", "POST"])
 def add():
