@@ -5,6 +5,7 @@ from flask_login import LoginManager
 from flask_bootstrap import Bootstrap
 
 db = SQLAlchemy()
+bootstrap=Bootstrap()
 login_manager = LoginManager()
 # security level, monitor the changes in a user's request header and log the user out
 login_manager.session_protection = "strong"

@@ -5,6 +5,10 @@ from .forms import AddAffirmation, DelAffirmation, AffirmationComment, DelAffirm
 from flask_login import login_required, current_user
 from .. import db
 
+@main.route('/')
+def index():
+  return render_template('index.html')
+
 
 @main.route("/home")
 def home():
@@ -75,7 +79,6 @@ def deletecomment(added_affirmation_id, comments_id):
 @main.route("/database_affirmations")
 def admin_affirmations():
     admin_affirmations = DatabaseAffirmations.query.all()
-    print(admin_affirmations)
     form = AffirmationComment()
 
     return render_template("databaseaffirmations.html", admin_affirmations=admin_affirmations, form=form)
@@ -93,3 +96,7 @@ def submit_comments(affirmation_id):
         db.session.commit()
 
     return redirect(url_for('main.admin_affirmations'))
+    affirmations=UserAffirmations.query.all()
+    print(affirmations)
+    admin_affirmations = DatabaseAffirmations.query.all()
+    return render_template("databaseaffirmations.html", admin_affirmations=admin_affirmations,affirmations=affirmations)
