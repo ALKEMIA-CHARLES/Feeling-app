@@ -4,6 +4,7 @@ from .forms import SignupForm,LoginForm
 from ..models import User
 from .. import db
 from flask_login import login_user, current_user,logout_user 
+from ..email import mail_message
 
 
 @auth.route('/login',methods = ["GET","POST"])
@@ -31,6 +32,8 @@ def signup():
     user.password(form.password.data)
     db.session.add(user)
     db.session.commit()
+    # mail_message("Welcome to Feeling App","email/welcome_user",user.email,user=user)
+
     return redirect(url_for('auth.login'))
   return render_template('signup.html',form=form,title=title)
 

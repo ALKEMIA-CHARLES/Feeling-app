@@ -22,6 +22,14 @@
     </div>
 
   </div>
+  <ul class="nav navbar-nav navbar-right">
+    {% if current_user.is_authenticated %}
+    <li><a href="{{url_for('main.profile',username=current_user.username)}}">Profile</a></li>
+    <li><a href="{{url_for('auth.logout')}}">Sign out</a></li>
+    {% else %}
+    <li><a href="{{url_for('auth.login')}}">Sign in</a></li>
+    {%endif%}
+  </ul>
 
   <a href="#"><i class="fa fa-fw fa-user"></i> Login</a>
 
