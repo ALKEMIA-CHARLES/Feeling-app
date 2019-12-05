@@ -16,7 +16,7 @@ def login():
     print(user)
     if user != None and user.verify_password(form.password.data):
       login_user(user,form.remember.data)
-      return redirect(url_for('main.home'))
+      return redirect(url_for('main.index'))
     
     flash('invalid username or password')
 
