@@ -1,4 +1,4 @@
-import requests
+# import requests
 
-def configure_request(app):
-    pass
+# def configure_request(app):
+#     pass

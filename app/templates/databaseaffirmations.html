@@ -1,0 +1,19 @@
+{% extends "base.html" %}
+{% block content %}
+
+<div class="container">
+    <div class="jumbotron">
+        {% for admin_affirmation in admin_affirmations %}
+        <div class="card-mb-4">
+            <div class="card-body">
+                <h1>{{admin_affirmation.database_affirmations_title}}</h1>
+                <p>{{admin_affirmation.database_affirmations_post_section}}</p>
+            </div>
+        </div>
+        {%endfor%}
+    </div>
+</div>
+
+
+
+{% endblock %}
