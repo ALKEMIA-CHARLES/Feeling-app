@@ -1,0 +1,3 @@
+Hello {{user.username}}
+Welcome to Feeling Application.
+Enjoy this peacefull environment full of positivity.Feel free to write your onw affirmations that will speak to you and to others.Thank you

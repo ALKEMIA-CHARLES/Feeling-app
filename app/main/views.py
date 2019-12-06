@@ -3,7 +3,9 @@ from . import main
 from ..models import User, UserAffirmations, Comments, DatabaseAffirmations
 from .forms import AddAffirmation, DelAffirmation, AffirmationComment, DelAffirmationComment
 from flask_login import login_required, current_user
-from .. import db
+from .. import db,photos
+from .forms import UpdateBio
+
 
 @main.route('/')
 def index():
@@ -30,7 +32,54 @@ def add():
 
         return redirect(url_for('main.affirmations_list'))
     return render_template('add.html', form=form)
+# profile page
 
+
+@main.route('/user/<username>')
+def profile(username):
+
+      user = User.query.filter_by(username = username).first()
+  
+      if user is None:
+          abort(404)
+  
+      return render_template("profile/profile.html", user = user)
+
+# updating profile
+@main.route('/user/<username>/update',methods = ['GET','POST'])
+@login_required
+def update_bio(username):
+      user = User.query.filter_by(username = username).first()
+      if user is None:
+          abort(404)
+  
+      form = UpdateBio()
+  
+      if form.validate_on_submit():
+          user.bio = form.bio.data
+  
+          db.session.add(user)
+          db.session.commit()
+  
+          return redirect(url_for('.profile',username=user.username))
+  
+      return render_template('profile/update.html',form =form)
+
+@main.route('/user/<username>/update/pic',methods= ['POST'])
+@login_required
+def update_photo(username):
+    user = User.query.filter_by(username = username).first()
+    if 'photo' in request.files:
+        filename = photos.save(request.files['photo'])
+        path = f'photos/{filename}'
+        user.profile_pic_path = path
+        db.session.commit()
+    return redirect(url_for('main.profile',username=username))
+
+
+
+
+  
 
 @main.route("/affirmationslist")
 def affirmations_list():

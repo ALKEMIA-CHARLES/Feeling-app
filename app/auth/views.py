@@ -3,7 +3,8 @@ from flask import render_template,redirect,url_for,flash,request
 from .forms import SignupForm,LoginForm
 from ..models import User
 from .. import db
-from flask_login import login_user, current_user,logout_user 
+from flask_login import login_user, current_user,logout_user,login_required
+from ..email import mail_message
 
 
 @auth.route('/login',methods = ["GET","POST"])
@@ -16,7 +17,7 @@ def login():
     print(user)
     if user != None and user.verify_password(form.password.data):
       login_user(user,form.remember.data)
-      return redirect(url_for('main.index'))
+      return redirect(url_for('main.home'))
     
     flash('invalid username or password')
 
@@ -31,10 +32,13 @@ def signup():
     user.password(form.password.data)
     db.session.add(user)
     db.session.commit()
+    # mail_message("Welcome to Feeling App","email/welcome_user",user.email,user=user)
+
     return redirect(url_for('auth.login'))
   return render_template('signup.html',form=form,title=title)
 
 @auth.route('/logout')
+@login_required
 def logout():
   logout_user()
-  return redirect(url_for('main.index'))
+  return redirect(url_for('main.home'))
