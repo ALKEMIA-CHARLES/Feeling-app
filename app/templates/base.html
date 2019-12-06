@@ -11,24 +11,24 @@
   <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
-  <title>Document</title>
+  <title>Feeling Application</title>
 </head>
 <body style="background-color: white;">
     <div class="navbar" style="background-color: black;">
              <a class="nav-item nav-link" href="{{url_for('main.home')}}"
-               style=" font-family: 'Indie Flower', cursive; ">Home</a>
+               >Home</a>
              <a class="nav-item nav-link" href="{{url_for('main.admin_affirmations')}}"
-               style=" font-family: 'Indie Flower', cursive; ">Get Positive</a>
+               >Get Positive</a>
              <a class="nav-item nav-link" href="{{url_for('main.add')}}"
-               style="  font-family: 'Indie Flower', cursive; ">Add affirmation</a>
-             <a class="nav-item nav-link" href="{{url_for('main.affirmations_list')}}"
-               style=" font-family: 'Indie Flower', cursive; ">Personal Affirmations</a>
+               >Add affirmation</a>
+             <a class="nav-item nav-link" href="{{url_for('main.affirmations_list')}}">Personal Affirmations</a>
        
         {% if current_user.is_authenticated %}
           <button><i class= "fa fa-caret-down" >{{current_user.username}}</i></button>
+          <li><a href="{{url_for('auth.logout')}}">Sign out</a></li>
         {% else %}
         <a href="{{url_for('auth.login')}}"><i class="fa fa-fw fa-user"></i> Login</a>
-        {% endif %}
+        {% endif %} 
       </div>
 {% block content %}
 
