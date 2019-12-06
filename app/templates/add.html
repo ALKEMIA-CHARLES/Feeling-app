@@ -1,9 +1,9 @@
 {% extends "base.html" %}
 {% block content %}
 
-<div class="jumbotron" style="background-color: lightsalmon;">
-    <h1 style="  font-family: 'Indie Flower', cursive;">Be nice to yourself</h1>
-    <form class="form-group" style=" font-family: 'Indie Flower', cursive; " method="POST">
+<div class="jumbotron" style="background-color: grey;;">
+    <h1 style="  font-family: 'Indie Flower', cursive;font-size:45px">Be nice to yourself</h1>
+    <form class="form-group" style=" font-family: 'Indie Flower', cursive; font-size:25px " method="POST">
         {{form.hidden_tag()}}
         {{form.title.label}}{{form.title(class = "form-control")}}
         <br>
