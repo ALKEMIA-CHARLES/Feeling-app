@@ -9,14 +9,15 @@
 
   <title>Document</title>
 </head>
-<body>
+<body style="background-color: indianred; font-family: 'Indie Flower', cursive; ">
     {% import 'bootstrap/wtf.html' as wtf %}
-    <div class="container-fluid login">
-      <div class="card bg-transparent" style="width: 40rem;">
-        <div class="card-body">
+    <div class="container-fluid login" style="background-color: dimgray; font-family: 'Indie Flower', cursive;">
+      <div class="" style=" font-family: 'Indie Flower', cursive; ">
+        <div class="card-body" style=" font-family: 'Indie Flower', cursive; ">
             {{wtf.quick_form(form)}}
         </div>
-        <p class="text-secondary">Dont have an acount..? <a href="{{url_for('auth.signup')}}">Sign up</a></p>
+        <p class="" style="color: black;  font-family: 'Indie Flower', cursive; ">Dont have an account..?<a
+            href="{{url_for('auth.signup')}}">Sign up</a></p>
       </div>
     </div>
 </body>

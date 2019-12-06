@@ -8,24 +8,31 @@
   <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
   <link href="https://fonts.googleapis.com/css?family=Lakki+Reddy&display=swap" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Yeon+Sung&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Indie+Flower&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
   <title>Document</title>
 </head>
-<body>
-    <div class="navbar">
-             <a class="nav-item nav-link" href="{{url_for('main.home')}}">Home</a>
-             <a class="nav-item nav-link" href="{{url_for('main.admin_affirmations')}}">Get Positive</a>
-             <a class="nav-item nav-link" href="{{url_for('main.add')}}">Add affirmation</a>
-             <a class="nav-item nav-link" href="{{url_for('main.affirmations_list')}}">Personal Affirmations</a>
+<body style="background-color: cadetblue;">
+    <div class="navbar" style="background-color: burlywood;">
+             <a class="nav-item nav-link" href="{{url_for('main.home')}}"
+               style=" font-family: 'Indie Flower', cursive; ">Home</a>
+             <a class="nav-item nav-link" href="{{url_for('main.admin_affirmations')}}"
+               style=" font-family: 'Indie Flower', cursive; ">Get Positive</a>
+             <a class="nav-item nav-link" href="{{url_for('main.add')}}"
+               style="  font-family: 'Indie Flower', cursive; ">Add affirmation</a>
+             <a class="nav-item nav-link" href="{{url_for('main.affirmations_list')}}"
+               style=" font-family: 'Indie Flower', cursive; ">Personal Affirmations</a>
         <div class="dropdown">
-          <button class="dropbtn"><i class= "fa fa-caret-down" >Be inspired</i></button>
+          <button class="dropbtn"><i class="fa fa-caret-down" style=" font-family: 'Indie Flower', cursive; ">Be
+              inspired</i></button>
           <div class="dropdown-content">
             <a href="#">Custom</a>
             <a href="#">Pre made</a>
           </div>
         </div>
-        <a href="{{url_for('auth.login')}}"><i class="fa fa-fw fa-user"></i> Login</a>
+        <a href="{{url_for('auth.login')}}"><i class="fa fa-fw fa-user"
+            style=" font-family: 'Indie Flower', cursive; "></i> Login</a>
       </div>
   <div class="container">
     {% block content %}
