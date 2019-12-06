@@ -34,11 +34,12 @@ class DatabaseAffirmations(db.Model):
     __tablename__ = 'affirmations'
     id = db.Column(db.Integer, primary_key=True)
     database_affirmations_title = db.Column(db.String)
+    images_path = db.Column(db.String, default=None, nullable=True)
     database_affirmations_post_section = db.Column(db.Text)
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     user_comments = db.relationship(
         "Comments", backref="database_affirmations_user_comments", lazy="dynamic")
-
+    
 
 class UserAffirmations(db.Model):
     __tablename__ = 'useraffirmations'
@@ -55,5 +56,4 @@ class Comments(db.Model):
     user_id = db.Column(db.Integer, db.ForeignKey('users.id'))
     database_affirmations_id = db.Column(
         db.Integer, db.ForeignKey('affirmations.id'))
-
 

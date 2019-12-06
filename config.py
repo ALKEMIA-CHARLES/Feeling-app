@@ -6,11 +6,13 @@ class Config:
     General configuration parent class
     '''
     
-    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://moringa:abc@localhost/feeling'
-    # UPLOADED_PHOTOS_DEST = "app/static/photos"
+    SQLALCHEMY_DATABASE_URI = 'postgresql+psycopg2://charles:123@localhost/feeling'
+    UPLOADED_PHOTOS_DEST = "app/static/imgs"
     SECRET_KEY="verysecret"
-    UPLOADED_PHOTOS_DEST ='app/static/photos'
-
+    UPLOADED_IMAGES_DEST ='app/static/imgs'
+    UPLOADS_DEFAULT_DESTINATION = 'app/static/imgs'
+    UPLOADS_DEFAULT_URL = ' http://localhost:5000/static/imgs/' 
+   
     MAIL_SERVER = 'smtp.googlemail.com'
     MAIL_PORT = 587
     MAIL_USE_TLS = True

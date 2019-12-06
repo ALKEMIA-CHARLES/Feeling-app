@@ -3,7 +3,7 @@ from . import main
 from ..models import User, UserAffirmations, Comments, DatabaseAffirmations
 from .forms import AddAffirmation, DelAffirmation, AffirmationComment, DelAffirmationComment
 from flask_login import login_required, current_user
-from .. import db,photos
+from .. import db,images
 from .forms import UpdateBio
 
 
@@ -128,6 +128,7 @@ def deletecomment(added_affirmation_id, comments_id):
 @main.route("/database_affirmations")
 def admin_affirmations():
     admin_affirmations = DatabaseAffirmations.query.all()
+    
     form = AffirmationComment()
 
     return render_template("databaseaffirmations.html", admin_affirmations=admin_affirmations, form=form)

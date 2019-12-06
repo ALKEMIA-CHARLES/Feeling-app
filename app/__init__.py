@@ -17,7 +17,7 @@ login_manager.session_protection = "strong"
 # We prefix the login endpoint with the blueprint name because it is located inside a blueprint.
 login_manager.login_view = "auth.login"
 bootstrap = Bootstrap()
-photos = UploadSet('photos',IMAGES)
+images = UploadSet('images',IMAGES)
 mail = Mail()
 
 
@@ -27,6 +27,7 @@ mail = Mail()
 def create_app(config_name):
 
     app = Flask(__name__)
+    global images
 
     # Creating the app configurations
     app.config.from_object(config_options[config_name])
@@ -35,9 +36,11 @@ def create_app(config_name):
     db.init_app(app)
     login_manager.init_app(app)
     bootstrap.init_app(app)
-    configure_uploads(app,photos)
+    configure_uploads(app, images)
     mail.init_app(app)
 
+    images = UploadSet('images', IMAGES)
+    configure_image_uploads = (app, images)
     # Registering the main app Blueprint
     from .main import main as main_blueprint
     app.register_blueprint(main_blueprint)
