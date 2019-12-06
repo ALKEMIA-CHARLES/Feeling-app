@@ -29,30 +29,6 @@ step 2: create a folder on your local file then initialize your editors step
 
 step 3:Run the the application in the terminal using the ./start.sh command or python3.6 manage.py runserver
 
-step 4: To view the application on the web: ctrl + click the link on the terminal to view the server.
- ### Alternative option for Installation
-
-#### For lazy people 😅
-#### Instructions
-* Clone the project
-* Create a virtual environment and activate it
-* Install the basic dependencies provided with **`pip install -r requirements.txt`**
-
-
-
-## Technologies Used
- * Flask (Python framework) 
- * HTML
- * CSS for stylying 
- * Bootstrap 
- * Postgressql database
-
-## Queries and concerns
-Incase of any queries,concerns and clarifications contact our scrum master
-[charles@gmail.com]
-
-## Bugs
-The website could load slowly when on slow internet
 
 ## Copyright and License
 GNU General Public Licence(https://github.com/ALKEMIA-CHARLES/Feeling-app/blob/master/LICENSE)
