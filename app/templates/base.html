@@ -28,7 +28,11 @@
         <a href="{{url_for('auth.login')}}"><i class="fa fa-fw fa-user"></i> Login</a>
       </div>
   <div class="container">
+  {% block navbar %}
+                {% include 'nvbar.html' %}
+            {% endblock %} 
     {% block content %}
+    
     {% endblock%}
   </div>
 
