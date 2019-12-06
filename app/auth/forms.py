@@ -8,7 +8,7 @@ class SignupForm(FlaskForm):
   username = StringField('User Name',[validators.DataRequired()])
   email = StringField('Email',[validators.DataRequired()])
   password = PasswordField('Password',[validators.DataRequired(), validators.EqualTo("confirm", message='passwords must match')])
-  confirm = PasswordField('Confir Password',[validators.DataRequired()])
+  confirm = PasswordField('Confirm Password',[validators.DataRequired()])
   submit = SubmitField('Sign Up')
 
   def check_email(self,data_field):
