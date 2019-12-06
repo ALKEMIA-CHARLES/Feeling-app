@@ -1,10 +1,3 @@
-# Large Flask Application Boilerplate Code
-#### For lazy people 😅
-## Instructions
-* Clone the project
-* Create a virtual environment and activate it
-* Install the basic dependencies provided with **`pip install -r requirements.txt`**
-
 
 ## FEELING -APPLICATION
 This application provides a positive plattform where a user is able to view affirmations,add their own affirmations and comment on different affirmations that speak to them.
@@ -27,29 +20,39 @@ This application provides a positive plattform where a user is able to view affi
 * On the get positive  link,you get to see different affirmations with corresponding emojis
 * For logged in users, the link for signing out is available next to the profile
 ## Setup and Installation
-To view the application go to click here [https://github.com/ALKEMIA-CHARLES/Feeling-app] check on the deployed link on the description.
+- Click the link  [https://github.com/ALKEMIA-CHARLES/Feeling-app]to see the application on github click on the link at the description to view the Heroku deployed link
 
-Step 1: Clone this repo :git clone (https://github.com/virginiah894/Pitches)
+Step 1: Clone this repo :git clone (https://github.com/ALKEMIA-CHARLES/Feeling-app)
 
-step 2: create a folder on your local file then initialize your editors step 4: Install virtual environment using :[python3 -m venv virtual] then activate the virtual environment using the following command [source virtual/bin/activate]
+step 2: create a folder on your local file then initialize your editors step 
+4: Install virtual environment using :[python3 -m venv virtual] then activate the virtual environment using the following command [source virtual/bin/activate]
 
 step 3:Run the the application in the terminal using the ./start.sh command or python3.6 manage.py runserver
 
 step 4: To view the application on the web: ctrl + click the link on the terminal to view the server.
+ ### Alternative option for Installation
+
+#### For lazy people 😅
+#### Instructions
+* Clone the project
+* Create a virtual environment and activate it
+* Install the basic dependencies provided with **`pip install -r requirements.txt`**
+
+
 
 ## Technologies Used
-Python.
  * Flask (Python framework) 
  * HTML
  * CSS for stylying 
  * Bootstrap 
- * Postgress database
+ * Postgressql database
 
-Queries and concerns
-Incase of any queries,concerns and clarifications email me on [virgyperry@gmail.com]
+## Queries and concerns
+Incase of any queries,concerns and clarifications contact our scrum master
+[charles@gmail.com]
 
-Bugs
+## Bugs
 The website could load slowly when on slow internet
 
-License
-MIT
+## Copyright and License
+GNU General Public Licence(https://github.com/ALKEMIA-CHARLES/Feeling-app/blob/master/LICENSE)
