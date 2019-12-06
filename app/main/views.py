@@ -18,6 +18,7 @@ def home():
 
 
 @main.route("/addaffirmation", methods=["GET", "POST"])
+@login_required
 def add():
     title = affirmation = None
     form = AddAffirmation()
@@ -36,6 +37,7 @@ def add():
 
 
 @main.route('/user/<username>')
+@login_required
 def profile(username):
 
       user = User.query.filter_by(username = username).first()
@@ -82,12 +84,14 @@ def update_photo(username):
   
 
 @main.route("/affirmationslist")
+@login_required
 def affirmations_list():
     added_affirmations = UserAffirmations.query.all()
     return render_template('affirmationslist.html', added_affirmations=added_affirmations)
 
 
 @main.route("/delaffirmation/<int:user_affirmation_id>", methods=["GET", "POST"])
+@login_required
 def delete(user_affirmation_id):
 
     deleted_affirmation = UserAffirmations.query.filter_by(
@@ -99,6 +103,7 @@ def delete(user_affirmation_id):
 
 
 @main.route("/comments/<int:database_affirmations_id>", methods=["GET", "POST"])
+@login_required
 def addcoments(database_affirmations_id):
 
     form = AffirmationComment()
@@ -117,6 +122,7 @@ def addcoments(database_affirmations_id):
 
 
 @main.route("/deletecomment/<int:added_affirmation_id>/<int:comments_id>", methods=["GET", "POST"])
+@login_required
 def deletecomment(added_affirmation_id, comments_id):
 
     comments = Comments.query.filterby(id=comments_id).first()
@@ -135,6 +141,7 @@ def admin_affirmations():
 
 
 @main.route('/submitcomment/<int:affirmation_id>', methods=['POST'])
+@login_required
 def submit_comments(affirmation_id):
     form = AffirmationComment()
 

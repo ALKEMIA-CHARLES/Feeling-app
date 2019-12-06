@@ -1,20 +1,49 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="container">
-    <h1 style=" font-family: 'Indie Flower', cursive; ">Your Affirmations</h1>
-    {%for added_affirmation in added_affirmations%}
-    <div class="card mb-4" style="background-color: purple;">
-        <div class="card-body" style="background-color: grey">
-            <h1 style=" font-family: 'Indie Flower', cursive; ">{{added_affirmation.user_affirmations_title}}</h1>
-            <p style=" font-family: 'Indie Flower', cursive; ">{{added_affirmation.user_affirmations_post_section}}</p>
-            <br>
-            <a class="btn btn-primary" href="/delaffirmation/{{added_affirmation.id}}"
-                style=" font-family: 'Indie Flower', cursive; ">Delete</a>
-            <br>
-            <!-- <a href="/comments/{{added_affirmation.id }}">view comments/comment on Blog</a> -->
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" id="flow">
+    <div class="carousel-inner">
+        <div class="carousel-item active">
+            <img src="https://www.nonprofitmarketingguide.com/blog/wp-content/uploads/2018/08/Heart_Eyes_Emoji.png"
+                alt="First slide" style=" padding:50px 50px; margin-left:310px; border-radius: 50%;text-align: center;"
+                width="400px;" height="400px;">
+            <div class="carousel-caption d-none d-md-block">
+                <h5></h5>
+            </div>
+        </div>
+        {% for added_affirmations in added_affirmations %}
+        <div class="carousel-item">
+            <!-- <img src="../static/imgs/img1.jpg" alt="..." width="400px;"height="400px;"> -->
+            <div class="">
+                <img class="mb-10"
+                    src="
+                        https://cdn.shopify.com/s/files/1/1061/1924/products/Nerd_with_Glasses_Emoji_2a8485bc-f136-4156-9af6-297d8522d8d1_large.png?v=1571606036 "
+                    alt="" style="padding:60px 60px; margin-left:310px;border-radius: 50%;text-align: center;"
+                    width="400px;" height="400px;">
+            </div>
+            <div class="top">
+                <div style="margin-top:0px; position:absolute;top:80%; left:5%;" class="carousel-caption d-md-block">
+                    <p style=" font-family: 'Indie Flower', cursive ; color: black;font-size: 40px; ">
+                        {{added_affirmations.user_affirmations_title}}</p>
+                </div>
+                <br>
+                <br>
+                <div style="margin-bottom:100px; position:absolute; top:83%; left:5%;"
+                    class="carousel-caption d-md-block">
+                    <h5 style=" font-family: 'Indie Flower', cursive ; color: black;font-size: 40px; ">
+                        {{added_affirmations.user_affirmations_post_section}}</h5>
+                </div>
+            </div>
+
+        </div>
+        {% endfor %}
+        <div class="carousel-item">
+            <img src="   https://www.google.com/ur " alt=""
+                style="padding:60px 60px; margin-left:310px; border-radius: 50%;text-align: center;" width="400px;"
+                height="400px;">
+            <div>
+
+            </div>
 
         </div>
     </div>
-    {%endfor%}
-</div>
 {% endblock %}
