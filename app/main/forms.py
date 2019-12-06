@@ -27,3 +27,6 @@ class DelAffirmationComment(FlaskForm):
 class getDatabaseAffirmations(FlaskForm):
     title = StringField()
     DatabaseAffirmations = TextAreaField()
+class UpdateBio(FlaskForm):
+    bio = TextAreaField('Tell us about you.',validators = [Required()])
+    submit = SubmitField('Submit')
