@@ -32,6 +32,10 @@ step 3:Run the the application in the terminal using the ./start.sh command or p
 step 4: To view the application on the web: ctrl + click the link on the terminal to view the server.
  ### Alternative option for Installation
 
+
+
+
+
 #### For lazy people 😅
 #### Instructions
 * Clone the project
