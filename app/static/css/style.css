@@ -128,3 +128,32 @@
         background-color:transparent;
 
 }
+
+.text{
+  z-index:1;
+  font-weight :100;
+  font-size: 60px;
+  color :orange;
+  text-align: center;
+  font-family: 'Permanent Marker', cursive;
+  text-shadow: 0 -3px 0 #333,
+    0 6px 8px rgba(0,0,0,.4),
+    0 9px 10px rgba(0,0,0,.15),
+    0 30px 10px rgba(0,0,0,.18),
+    0 15px 10px rgba(0,0,0,.21);
+  }
+
+  .overlay{
+    height: inherit;
+    background-color: rgba(0, 0, 0, 0.5);
+    background-size: cover;
+  }
+  #cover{
+    background-image: url("../imgs/img2.jpg");
+    background-size: cover;
+    background-position: center;
+}
+#cover{
+    margin-top: 0px;
+    padding-top: 0;
+}

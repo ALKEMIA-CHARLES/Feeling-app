@@ -1,15 +1,25 @@
 {% extends "base.html" %}
 {% block content %}
-<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel">
+<style>
+       #flow{
+           width:600px;
+           height:500px;
+           position:absolute;
+           top:0%;
+           left:80%;
+       }
+</style>
+<body>
+<div id="carouselExampleSlidesOnly" class="carousel slide" data-ride="carousel" id="flow">
     <div class="carousel-inner">
         <div class="carousel-item active">
-            <img class="d-block w-100" src="../static/imgs/img1.jpg" alt="First slide">
+            <img  src="https://www.nonprofitmarketingguide.com/blog/wp-content/uploads/2018/08/Heart_Eyes_Emoji.png" alt="First slide" style=" padding:50px 50px; margin-left:310px; border-radius: 50%;text-align: center;" width="400px;" height="400px;">
+        
         </div>
         <div class="carousel-item">
             <!-- <img src="../static/imgs/img1.jpg" alt="..." width="400px;"height="400px;"> -->
             <div>
-                <img src="../static/imgs/emozi.jpg" alt="" style="border-radius: 50%;text-align: center;" width="400px;"
-                    height="400px;">
+                <img src="https://i.cbc.ca/1.3504487.1479837941!/fileImage/httpImage/image.jpg_gen/derivatives/16x9_780/emoji.jpg" alt="" style="padding:60px 60px; margin-left:310px;border-radius: 50%;text-align: center;" width="400px;"height="400px;">
             </div>
             {% for admin_affirmation in admin_affirmations %}
             <div class="carousel-caption d-none d-md-block">
@@ -19,12 +29,12 @@
             {% endfor %}
         </div>
         <div class="carousel-item">
-            <img class="d-block w-100" src="static/imgs/IMG_2112.JPG" alt="Third slide">
+            <img src="https://media.apnarm.net.au/media/images/2017/12/20/imagev15aeb95a3ac64303ab7a659fe164838f3-h3ikxkhr8ght7ddngp2_t1880.jpg" alt="" style="padding:60px 60px; margin-left:310px; border-radius: 50%;text-align: center;" width="400px;"height="400px;">
             <div>
-                <img src="../static/imgs/emozi.jpg" alt="" style="border-radius: 50%;text-align: center;" width="400px;"
-                    height="400px;">
+                
             </div>
       
         </div>
     </div>
-    {% endblock %}
+</body>
+{% endblock %}
