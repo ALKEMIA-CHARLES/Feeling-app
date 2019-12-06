@@ -14,10 +14,13 @@
 </head>
 <body>
     <div class="navbar">
-             <a class="nav-item nav-link" href="{{url_for('main.home')}}">Home</a>
-             <a class="nav-item nav-link" href="{{url_for('main.admin_affirmations')}}">Get Positive</a>
-             <a class="nav-item nav-link" href="{{url_for('main.add')}}">Add affirmation</a>
-             <a class="nav-item nav-link" href="{{url_for('main.affirmations_list')}}">Personal Affirmations</a>
+        <a id="pro">FEELINGS</a>
+        <a href="{{url_for('main.index')}}"><i class="fa fa-fw fa-home"></i>Home</a>
+        <a href="#" id="life"><i class="fa fa-book"></i>About</a>
+        <a class="nav-item nav-link" href="{{url_for('main.admin_affirmations')}}">Get Positive</a>
+        <a class="nav-item nav-link" href="{{url_for('main.add')}}">Add affirmation</a>
+        <a class="nav-item nav-link" href="{{url_for('main.affirmations_list')}}">Personal Affirmations</a>
+        <a href="{{url_for('auth.logout')}}" id="life"><i class="fa fa-book"></i>logout</a>
         <div class="dropdown">
           <button class="dropbtn"><i class= "fa fa-caret-down" >Be inspired</i></button>
           <div class="dropdown-content">
@@ -25,7 +28,17 @@
             <a href="#">Pre made</a>
           </div>
         </div>
+        {% if current_user.is_authenticated %}
+        <div class="dropdown">
+          <button class="dropbtn"><i class= "fa fa-caret-down" >{{current_user.username}}</i></button>
+          <div class="dropdown-content">
+            <a href="#">Profile</a>
+            <a href="{{url_for('auth.logout')}}">Logout</a>
+          </div>
+        </div>
+        {%else%}
         <a href="{{url_for('auth.login')}}"><i class="fa fa-fw fa-user"></i> Login</a>
+        {% endif %}
       </div>
   <div class="container">
   {% block navbar %}
